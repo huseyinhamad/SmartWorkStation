@@ -24,7 +24,7 @@ namespace MertYazilimCase
                 options.UseSqlServer(@"Server=localhost;Initial Catalog=MertYazilimCase;Trusted_Connection=True;"));
 
                 var serilogLogger = new LoggerConfiguration()
-                .WriteTo.File("../../../logs.txt")
+                .WriteTo.File("../../../../logs.txt")
                 .CreateLogger();
                 services.AddLogging(x =>
                 {

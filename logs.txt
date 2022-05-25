@@ -1,0 +1,48 @@
+2022-05-26 00:17:36.606 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-26 00:17:36.869 +03:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:17:36.889 +03:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:17:36.892 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:17:36.892 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:17:36.942 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-26 00:17:36.955 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-26 00:17:36.971 +03:00 [Information] FormMain "Started" at 05/25/2022 21:17:36
+2022-05-26 00:17:37.269 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:17:37
+2022-05-26 00:17:59.814 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-26 00:18:00.228 +03:00 [Information] Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:18:00.256 +03:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:18:00.291 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:18:00.291 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:18:00.318 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-26 00:18:00.335 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-26 00:18:00.373 +03:00 [Information] FormMain "Started" at 05/25/2022 21:18:00
+2022-05-26 00:18:00.892 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:18:00
+2022-05-26 00:18:08.194 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-26 00:18:08.469 +03:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:18:08.491 +03:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:18:08.494 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:18:08.495 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:18:08.510 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-26 00:18:08.522 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-26 00:18:08.537 +03:00 [Information] FormMain "Started" at 05/25/2022 21:18:08
+2022-05-26 00:18:08.888 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:18:08
