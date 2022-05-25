@@ -216,3 +216,248 @@ ORDER BY [MigrationId];"
 2022-05-25 10:16:28.902 +03:00 [Information] FormSensor "Started" at 05/25/2022 07:16:28
 2022-05-25 10:16:31.059 +03:00 [Information] FormProductLines "Started" at 05/25/2022 07:16:31
 2022-05-25 10:16:31.095 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 07:16:31
+2022-05-25 16:34:11.551 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-25 16:34:12.478 +03:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 16:34:12.784 +03:00 [Information] Executed DbCommand ("287"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 16:34:12.789 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 16:34:12.790 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 16:34:12.845 +03:00 [Information] Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-25 16:34:12.867 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-25 16:34:12.945 +03:00 [Information] FormMain "Started" at 05/25/2022 13:34:12
+2022-05-25 16:34:13.717 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 13:34:13
+2022-05-25 22:13:23.312 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-25 22:13:24.386 +03:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 22:13:24.420 +03:00 [Information] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 22:13:24.425 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 22:13:24.426 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 22:13:24.466 +03:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-25 22:13:24.489 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-25 22:13:24.591 +03:00 [Information] FormMain "Started" at 05/25/2022 19:13:24
+2022-05-25 22:13:25.242 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 19:13:25
+2022-05-25 23:01:13.511 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-25 23:01:14.143 +03:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 23:01:14.165 +03:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 23:01:14.169 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 23:01:14.169 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 23:01:14.193 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-25 23:01:14.211 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-25 23:01:14.247 +03:00 [Information] FormMain "Started" at 05/25/2022 20:01:14
+2022-05-25 23:01:14.695 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 20:01:14
+2022-05-25 23:01:25.235 +03:00 [Information] FormWorkStations "Started" at 05/25/2022 20:01:25
+2022-05-25 23:01:25.280 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 20:01:25
+2022-05-25 23:12:04.326 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-25 23:12:04.771 +03:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 23:12:04.804 +03:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 23:12:04.809 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 23:12:04.810 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 23:12:04.834 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-25 23:12:04.853 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-25 23:12:04.920 +03:00 [Information] FormMain "Started" at 05/25/2022 20:12:04
+2022-05-25 23:12:05.480 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 20:12:05
+2022-05-25 23:57:28.964 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-25 23:57:29.419 +03:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 23:57:29.444 +03:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 23:57:29.449 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 23:57:29.449 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 23:57:29.473 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-25 23:57:29.493 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-25 23:57:29.546 +03:00 [Information] FormMain "Started" at 05/25/2022 20:57:29
+2022-05-25 23:57:30.224 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 20:57:30
+2022-05-25 23:59:49.853 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-25 23:59:50.109 +03:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 23:59:50.129 +03:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 23:59:50.133 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 23:59:50.134 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 23:59:50.153 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-25 23:59:50.166 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-25 23:59:50.195 +03:00 [Information] FormMain "Started" at 05/25/2022 20:59:50
+2022-05-25 23:59:50.524 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 20:59:50
+2022-05-26 00:09:45.423 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-26 00:09:46.045 +03:00 [Information] Executed DbCommand ("61"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:09:46.124 +03:00 [Information] Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:09:46.128 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:09:46.128 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:09:46.179 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-26 00:09:46.223 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-26 00:09:46.332 +03:00 [Information] FormMain "Started" at 05/25/2022 21:09:46
+2022-05-26 00:09:47.328 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:09:47
+2022-05-26 00:10:32.516 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-26 00:10:32.853 +03:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:10:32.888 +03:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:10:32.892 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:10:32.893 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:10:32.918 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-26 00:10:32.940 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-26 00:10:32.965 +03:00 [Information] FormMain "Started" at 05/25/2022 21:10:32
+2022-05-26 00:10:33.381 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:10:33
+2022-05-26 00:12:48.515 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-26 00:12:50.410 +03:00 [Information] Executed DbCommand ("1,562"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""CREATE DATABASE [MertYazilimCase];"
+2022-05-26 00:12:50.496 +03:00 [Information] Executed DbCommand ("83"ms) [Parameters=[""], CommandType='Text', CommandTimeout='60']"
+""IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [MertYazilimCase] SET READ_COMMITTED_SNAPSHOT ON;
+END;"
+2022-05-26 00:12:50.518 +03:00 [Information] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:12:50.623 +03:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);"
+2022-05-26 00:12:50.625 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:12:50.648 +03:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:12:50.654 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-26 00:12:50.675 +03:00 [Information] Applying migration '"20220525001657_Inital"'.
+2022-05-26 00:12:50.723 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Alarms] (
+    [AlarmId] int NOT NULL IDENTITY,
+    [WorkStationId] int NOT NULL,
+    [MinimumTemperature] float NOT NULL,
+    [MaximumTemperature] float NOT NULL,
+    [MinimumPressure] float NOT NULL,
+    [MaximumPressure] float NOT NULL,
+    CONSTRAINT [PK_Alarms] PRIMARY KEY ([AlarmId])
+);"
+2022-05-26 00:12:50.728 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Personels] (
+    [PersonelId] int NOT NULL IDENTITY,
+    [PersonelName] nvarchar(max) NULL,
+    [PersonelMail] nvarchar(max) NULL,
+    [WorkStationId] int NOT NULL,
+    CONSTRAINT [PK_Personels] PRIMARY KEY ([PersonelId])
+);"
+2022-05-26 00:12:50.730 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [ProductLines] (
+    [ProductLineId] int NOT NULL IDENTITY,
+    [ProductLineName] nvarchar(max) NULL,
+    CONSTRAINT [PK_ProductLines] PRIMARY KEY ([ProductLineId])
+);"
+2022-05-26 00:12:50.734 +03:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [WorkStations] (
+    [WorkStationId] int NOT NULL IDENTITY,
+    [ProductLineId] int NOT NULL,
+    [WorkStationName] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_WorkStations] PRIMARY KEY ([WorkStationId]),
+    CONSTRAINT [FK_WorkStations_ProductLines_ProductLineId] FOREIGN KEY ([ProductLineId]) REFERENCES [ProductLines] ([ProductLineId]) ON DELETE CASCADE
+);"
+2022-05-26 00:12:50.737 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [PersonelWorkStation] (
+    [PersonelsPersonelId] int NOT NULL,
+    [WorkStationsWorkStationId] int NOT NULL,
+    CONSTRAINT [PK_PersonelWorkStation] PRIMARY KEY ([PersonelsPersonelId], [WorkStationsWorkStationId]),
+    CONSTRAINT [FK_PersonelWorkStation_Personels_PersonelsPersonelId] FOREIGN KEY ([PersonelsPersonelId]) REFERENCES [Personels] ([PersonelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_PersonelWorkStation_WorkStations_WorkStationsWorkStationId] FOREIGN KEY ([WorkStationsWorkStationId]) REFERENCES [WorkStations] ([WorkStationId]) ON DELETE CASCADE
+);"
+2022-05-26 00:12:50.741 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Sensors] (
+    [SensorId] int NOT NULL IDENTITY,
+    [WorkStationId] int NOT NULL,
+    [Temperature] float NOT NULL,
+    [Pressure] float NOT NULL,
+    [Status] bit NOT NULL,
+    [Date] datetime2 NOT NULL,
+    CONSTRAINT [PK_Sensors] PRIMARY KEY ([SensorId]),
+    CONSTRAINT [FK_Sensors_WorkStations_WorkStationId] FOREIGN KEY ([WorkStationId]) REFERENCES [WorkStations] ([WorkStationId]) ON DELETE CASCADE
+);"
+2022-05-26 00:12:50.745 +03:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_PersonelWorkStation_WorkStationsWorkStationId] ON [PersonelWorkStation] ([WorkStationsWorkStationId]);"
+2022-05-26 00:12:50.747 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Sensors_WorkStationId] ON [Sensors] ([WorkStationId]);"
+2022-05-26 00:12:50.748 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_WorkStations_ProductLineId] ON [WorkStations] ([ProductLineId]);"
+2022-05-26 00:12:50.753 +03:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220525001657_Inital', N'6.0.5');"
+2022-05-26 00:12:50.774 +03:00 [Information] FormMain "Started" at 05/25/2022 21:12:50
+2022-05-26 00:12:51.116 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:12:51
+2022-05-26 00:13:39.226 +03:00 [Information] FormProductLines "Started" at 05/25/2022 21:13:39
+2022-05-26 00:13:39.293 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:13:39
+2022-05-26 00:13:42.417 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:13:42
+2022-05-26 00:13:44.599 +03:00 [Information] FormWorkStations "Started" at 05/25/2022 21:13:44
+2022-05-26 00:13:44.614 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:13:44
+2022-05-26 00:13:47.449 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:13:47
+2022-05-26 00:13:49.106 +03:00 [Information] FormPersonels "Started" at 05/25/2022 21:13:49
+2022-05-26 00:13:49.120 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:13:49
+2022-05-26 00:13:58.471 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:13:58
+2022-05-26 00:14:00.663 +03:00 [Information] FormAlarms "Started" at 05/25/2022 21:14:00
+2022-05-26 00:14:00.681 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:14:00
+2022-05-26 00:14:06.994 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:14:06
+2022-05-26 00:14:25.581 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-26 00:14:25.801 +03:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:14:25.821 +03:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:14:25.824 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-26 00:14:25.824 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-26 00:14:25.839 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-26 00:14:25.852 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-26 00:14:25.873 +03:00 [Information] FormMain "Started" at 05/25/2022 21:14:25
+2022-05-26 00:14:26.269 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 21:14:26

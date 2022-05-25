@@ -5,9 +5,13 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MertYazilimCase", "MertYazilimCase\MertYazilimCase.csproj", "{230DE5E1-FA9D-4FFF-87EF-BFC133B9455B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MertYazilimCase.Data", "MertYazilimCase.Data\MertYazilimCase.Data.csproj", "{4340240B-5442-4DE3-B6F2-B258F95A1406}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MertYazilimCase.Business", "MertYazilimCase.Business\MertYazilimCase.Business.csproj", "{FD622162-C77E-4A83-BFA7-8B465B819C98}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MertYazilimCase.Data", "MertYazilimCase.Data\MertYazilimCase.Data.csproj", "{EC54BD4C-C816-4285-AA78-E2547713B87D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MertYazilimCase.WebAPI", "MertYazilimCase.WebAPI\MertYazilimCase.WebAPI.csproj", "{366D51B1-58CB-4488-93C4-D39A80575217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MertYazilimCase.ConsoleApp", "MertYazilimCase.Console\MertYazilimCase.ConsoleApp.csproj", "{DF560C82-5B2F-4745-B093-AA13288BBF03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +23,22 @@ Global
 		{230DE5E1-FA9D-4FFF-87EF-BFC133B9455B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{230DE5E1-FA9D-4FFF-87EF-BFC133B9455B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{230DE5E1-FA9D-4FFF-87EF-BFC133B9455B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4340240B-5442-4DE3-B6F2-B258F95A1406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4340240B-5442-4DE3-B6F2-B258F95A1406}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4340240B-5442-4DE3-B6F2-B258F95A1406}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4340240B-5442-4DE3-B6F2-B258F95A1406}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FD622162-C77E-4A83-BFA7-8B465B819C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD622162-C77E-4A83-BFA7-8B465B819C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD622162-C77E-4A83-BFA7-8B465B819C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD622162-C77E-4A83-BFA7-8B465B819C98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC54BD4C-C816-4285-AA78-E2547713B87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC54BD4C-C816-4285-AA78-E2547713B87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC54BD4C-C816-4285-AA78-E2547713B87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC54BD4C-C816-4285-AA78-E2547713B87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{366D51B1-58CB-4488-93C4-D39A80575217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{366D51B1-58CB-4488-93C4-D39A80575217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{366D51B1-58CB-4488-93C4-D39A80575217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{366D51B1-58CB-4488-93C4-D39A80575217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF560C82-5B2F-4745-B093-AA13288BBF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF560C82-5B2F-4745-B093-AA13288BBF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF560C82-5B2F-4745-B093-AA13288BBF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF560C82-5B2F-4745-B093-AA13288BBF03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using MertYazilimCase.Data.DataLayer;
 using System.Linq.Expressions;
 
-namespace MertYazilimCase.Data.BusinessLayer
+namespace MertYazilimCase.Business
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

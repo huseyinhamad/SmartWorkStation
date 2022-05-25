@@ -1,4 +1,4 @@
-﻿using MertYazilimCase.Data.BusinessLayer;
+﻿using MertYazilimCase.Business;
 using MertYazilimCase.Data.DataLayer;
 using MertYazilimCase.Data.Models;
 using MertYazilimCase.Forms.outputForms;

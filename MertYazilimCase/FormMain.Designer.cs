@@ -78,7 +78,6 @@
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonAddRandomValue = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSensors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sensorBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -477,23 +476,12 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
-            // buttonAddRandomValue
-            // 
-            this.buttonAddRandomValue.Location = new System.Drawing.Point(223, 439);
-            this.buttonAddRandomValue.Name = "buttonAddRandomValue";
-            this.buttonAddRandomValue.Size = new System.Drawing.Size(167, 27);
-            this.buttonAddRandomValue.TabIndex = 11;
-            this.buttonAddRandomValue.Text = "Add Random Value";
-            this.buttonAddRandomValue.UseVisualStyleBackColor = true;
-            this.buttonAddRandomValue.Click += new System.EventHandler(this.buttonAddRandomValue_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(633, 478);
-            this.Controls.Add(this.buttonAddRandomValue);
             this.Controls.Add(this.buttonFilter);
             this.Controls.Add(this.labelFilter);
             this.Controls.Add(this.textBoxFilter1);
@@ -570,6 +558,5 @@
         private DataGridViewTextBoxColumn pressureDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private Button buttonAddRandomValue;
     }
 }

@@ -1,4 +1,4 @@
-using MertYazilimCase.Data.BusinessLayer;
+using MertYazilimCase.Business;
 using MertYazilimCase.Data.DataLayer;
 using MertYazilimCase.Data.Models;
 using MertYazilimCase.Forms.inputForms;
@@ -174,90 +174,6 @@ namespace MertYazilimCase
                 buttonFilter.Text = "Filter";
                 textBoxFilter1.Clear();
                 textBoxFilter2.Clear();
-            }
-        }
-        private void buttonAddRandomValue_Click(object sender, EventArgs e)
-        {  
-            var random = new Random();
-
-            var workStations = workStationRepository.GetEntity().ToList();
-            var sensors = sensorRepository.GetEntity().ToList();
-
-            int index = random.Next(workStations.Count);
-            var sensor = new Sensor
-            {
-                WorkStationId = workStations[index].WorkStationId,
-                Temperature = Math.Round(random.NextDouble() * (120 - 40) + 40, 2),
-                Pressure = Math.Round(random.NextDouble() * (20 - 10) + 10, 2),
-                Status = true,
-                Date = DateTime.UtcNow
-            };
-            var json = JsonConvert.SerializeObject(sensor, Formatting.Indented);
-            Console.WriteLine(json);
-            File.WriteAllText("../../../sensor.json", json);
-
-            Sensor data = JsonConvert.DeserializeObject<Sensor>(json);
-            var insertSensor = new Sensor()
-            {
-                WorkStationId = data.WorkStationId,
-                Temperature = data.Temperature,
-                Pressure = data.Pressure,
-                Status = data.Status,
-                Date = data.Date
-            };
-            sensorRepository.Insert(insertSensor);
-            sensorRepository.Save();
-            checkSensorValues(insertSensor);
-            RefreshDBGrid();
-        }
-        private void checkSensorValues(Sensor insertSensor)
-        {
-            var alarms = alarmRepository.GetEntity(b => b.WorkStationId == insertSensor.WorkStationId
-                                                        && (b.MinimumTemperature > insertSensor.Temperature
-                                                        || b.MaximumTemperature < insertSensor.Temperature
-                                                        || b.MinimumPressure > insertSensor.Pressure
-                                                        || b.MaximumPressure < insertSensor.Pressure)
-                                                        ).ToList();
-            if (alarms != null)
-            {
-                var personelList = personelRepository.GetEntity(b => b.WorkStationId == insertSensor.WorkStationId).ToList();
-                if (personelList != null)
-                {
-                    SmtpClient client = new SmtpClient()
-                    {
-                        Host = "smtp.gmail.com",
-                        Port = 587,
-                        EnableSsl = true,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        UseDefaultCredentials = false,
-                        Credentials = new NetworkCredential()
-                        {
-                            UserName = "huseyinhamaddemo@gmail.com",
-                            Password = "MertCase123+"
-                        }
-                    };
-                    try
-                    {
-                        foreach (var personel in personelList)
-                        {
-                            MailAddress fromEmail = new MailAddress("huseyinhamaddemo@gmail.com", "Hüseyin Hamad");
-                            MailAddress toMail = new MailAddress(personel.PersonelMail.ToString(), personel.PersonelName.ToString());
-                            MailMessage Message = new MailMessage()
-                            {
-                                From = fromEmail,
-                                Subject = "Warning!!",
-                                Body = "Sensor Values for Work Station ID: " + personel.WorkStationId.ToString() + " are not optimal"
-                            };
-                            Message.To.Add(toMail);
-                            client.Send(Message);
-                        }
-                        MessageBox.Show("Warnings Sent Successfully");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
             }
         }
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
