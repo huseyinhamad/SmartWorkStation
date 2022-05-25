@@ -1,0 +1,8 @@
+{
+  "SensorId": 0,
+  "WorkStationId": 1,
+  "Temperature": 54.16,
+  "Pressure": 10.0,
+  "Status": true,
+  "Date": "2022-05-25T07:03:59.0755464Z"
+}

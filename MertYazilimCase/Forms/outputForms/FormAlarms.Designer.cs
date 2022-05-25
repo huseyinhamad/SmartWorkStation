@@ -131,6 +131,7 @@
             this.Name = "FormAlarms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alarms";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAlarms_FormClosed);
             this.Load += new System.EventHandler(this.FormAlarms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlarms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alarmBindingSource)).EndInit();

@@ -63,6 +63,9 @@ namespace MertYazilimCase.Forms.inputForms
                 personelRepository.Insert(personel);
                 personelRepository.Save();
                 formPersonels.RefreshDBGrid();
+
+                this.workStationRepository.Dispose();
+                this.personelRepository.Dispose();
                 this.Close();
             }
             else if (buttonSubmit.Text == "Edit")
@@ -87,6 +90,9 @@ namespace MertYazilimCase.Forms.inputForms
 
                         formPersonels.RefreshDBGrid();
                         formPersonels._selectedRow = null;
+
+                        this.workStationRepository.Dispose();
+                        this.personelRepository.Dispose();
                         this.Close();
                     }
                 }
@@ -103,6 +109,9 @@ namespace MertYazilimCase.Forms.inputForms
 
                 formPersonels.RefreshDBGrid();
                 formPersonels._selectedRow = null;
+
+                this.workStationRepository.Dispose();
+                this.personelRepository.Dispose();
                 this.Close();
             }
         }
@@ -110,6 +119,8 @@ namespace MertYazilimCase.Forms.inputForms
         private void FormPersonel_FormClosed(object sender, FormClosedEventArgs e)
         {
             formPersonels._selectedRow = null;
+            this.workStationRepository.Dispose();
+            this.personelRepository.Dispose();
         }
     }
 }

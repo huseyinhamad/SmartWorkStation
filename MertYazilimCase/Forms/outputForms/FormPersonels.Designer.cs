@@ -122,6 +122,7 @@
             this.Name = "FormPersonels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personels";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPersonels_FormClosed);
             this.Load += new System.EventHandler(this.FormPersonels_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonels)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelBindingSource)).EndInit();

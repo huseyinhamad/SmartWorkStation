@@ -6,6 +6,7 @@ using MertYazilimCase.Forms.outputForms;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
 
@@ -16,6 +17,10 @@ namespace MertYazilimCase
         public ILogger _logger;
         public DataGridViewRow _selectedRow { get; set; }
         private GenericRepository<Sensor> sensorRepository;
+        private GenericRepository<WorkStation> workStationRepository;
+        private GenericRepository<Alarm> alarmRepository;
+        private GenericRepository<Personel> personelRepository;
+
         public FormMain(ILogger<FormMain> logger)
         {
             _logger = logger;
@@ -23,6 +28,9 @@ namespace MertYazilimCase
             InitializeComponent();
             DatabaseContext context = new DatabaseContext();
             this.sensorRepository = new GenericRepository<Sensor>(context);
+            this.workStationRepository = new GenericRepository<WorkStation>(context);
+            this.alarmRepository = new GenericRepository<Alarm>(context);
+            this.personelRepository = new GenericRepository<Personel>(context);
             Repaint();
         }
         private void Repaint()
@@ -121,33 +129,27 @@ namespace MertYazilimCase
                 {
                     if (textBoxFilter1.Text != "")
                     {
-                        using (var context = new DatabaseContext())
-                        {
-                            var workStations = context.WorkStations.Where(b => b.ProductLineId == int.Parse(textBoxFilter1.Text)).ToList();
-                            List<Sensor> sensors = new List<Sensor>();
+                        var workStations = workStationRepository.GetEntity(b => b.ProductLineId == int.Parse(textBoxFilter1.Text));
+                        List<Sensor> sensors = new List<Sensor>();
 
-                            foreach (var workStation in workStations)
-                            {
-                                var filteredSensors = (context.Sensors.Where(b => b.WorkStationId == workStation.WorkStationId).ToList());
-                                sensors.Add(new Sensor(filteredSensors));
-                            }
-                            dataGridViewSensors.DataSource = sensors;
-                            _logger.LogInformation("dataGridViewFormSensors {BusinessLayerEvent} at {dateTime}", "Filtered by Product Line", DateTime.UtcNow);
+                        foreach (var workStation in workStations)
+                        {
+                            var filteredSensors = sensorRepository.GetEntity(b => b.WorkStationId == workStation.WorkStationId).ToList();
+                            sensors.Add(new Sensor(filteredSensors));
                         }
-                        buttonFilter.Text = "Go Back";
+                        dataGridViewSensors.DataSource = sensors;
+                        _logger.LogInformation("dataGridViewFormSensors {BusinessLayerEvent} at {dateTime}", "Filtered by Product Line", DateTime.UtcNow);
+                    buttonFilter.Text = "Go Back";
                     }
                 }
                 else if (labelFilter.Text == "Work Station:")
                 {
                     if (textBoxFilter1.Text != "")
                     {
-                        using (var context = new DatabaseContext())
-                        {
-                            var filteredSensors = context.Sensors.Where(b => b.WorkStationId == int.Parse(textBoxFilter1.Text)).ToList();
-                            dataGridViewSensors.DataSource = filteredSensors;
-                            _logger.LogInformation("dataGridViewFormSensors {BusinessLayerEvent} at {dateTime}", "Filtered by Work Station", DateTime.UtcNow);
-                        }
-                        buttonFilter.Text = "Go Back";
+                        var filteredSensors = workStationRepository.GetEntity(b => b.WorkStationId == int.Parse(textBoxFilter1.Text));
+                        dataGridViewSensors.DataSource = filteredSensors;
+                        _logger.LogInformation("dataGridViewFormSensors {BusinessLayerEvent} at {dateTime}", "Filtered by Work Station", DateTime.UtcNow);
+                    buttonFilter.Text = "Go Back";
                     }
                 }
                 else if (labelFilter.Text == "Date Between:")
@@ -156,9 +158,9 @@ namespace MertYazilimCase
                     {
                         using (var context = new DatabaseContext())
                         {
-                            var filteredSensors = context.Sensors.Where(b => b.Date >= DateTime.Parse(textBoxFilter1.Text)
+                            var filteredSensors = sensorRepository.GetEntity(b => b.Date >= DateTime.Parse(textBoxFilter1.Text)
                                                                 && b.Date <= DateTime.Parse(textBoxFilter2.Text)
-                                                                ).ToList();
+                                                                );
                             dataGridViewSensors.DataSource = filteredSensors;
                             _logger.LogInformation("dataGridViewFormSensors {BusinessLayerEvent} at {dateTime}", "Filtered by Date", DateTime.UtcNow);
                         }
@@ -175,99 +177,95 @@ namespace MertYazilimCase
             }
         }
         private void buttonAddRandomValue_Click(object sender, EventArgs e)
-        {
-            using (var context = new DatabaseContext())
+        {  
+            var random = new Random();
+
+            var workStations = workStationRepository.GetEntity().ToList();
+            var sensors = sensorRepository.GetEntity().ToList();
+
+            int index = random.Next(workStations.Count);
+            var sensor = new Sensor
             {
-                var random = new Random();
+                WorkStationId = workStations[index].WorkStationId,
+                Temperature = Math.Round(random.NextDouble() * (120 - 40) + 40, 2),
+                Pressure = Math.Round(random.NextDouble() * (20 - 10) + 10, 2),
+                Status = true,
+                Date = DateTime.UtcNow
+            };
+            var json = JsonConvert.SerializeObject(sensor, Formatting.Indented);
+            Console.WriteLine(json);
+            File.WriteAllText("../../../sensor.json", json);
 
-                var workStations = context.WorkStations.ToList();
-                var sensors = context.Sensors.ToList();
-
-                int index = random.Next(workStations.Count);
-                int sensorIdIndex = sensors.Count();
-
-                var sensor = new Sensor
-                {
-                    WorkStationId = workStations[index].WorkStationId,
-                    Temperature = Math.Round(random.NextDouble() * (120 - 40) + 40, 2),
-                    Pressure = Math.Round(random.NextDouble() * (20 - 10) + 10, 2),
-                    Status = true,
-                    Date = DateTime.UtcNow
-                };
-                var json = JsonConvert.SerializeObject(sensor, Formatting.Indented);
-                Console.WriteLine(json);
-                File.WriteAllText("../../../sensor.json", json);
-
-                Sensor data = JsonConvert.DeserializeObject<Sensor>(json);
-                using (var contextInsert = new DatabaseContext())
-                {
-                    var insertSensor = new Sensor()
-                    {
-                        WorkStationId = data.WorkStationId,
-                        Temperature = data.Temperature,
-                        Pressure = data.Pressure,
-                        Status = data.Status,
-                        Date = data.Date
-                    };
-                    contextInsert.Sensors.Add(insertSensor);
-                    contextInsert.SaveChanges();
-                    checkSensorValues(insertSensor);
-                    RefreshDBGrid();
-                }
-            }
+            Sensor data = JsonConvert.DeserializeObject<Sensor>(json);
+            var insertSensor = new Sensor()
+            {
+                WorkStationId = data.WorkStationId,
+                Temperature = data.Temperature,
+                Pressure = data.Pressure,
+                Status = data.Status,
+                Date = data.Date
+            };
+            sensorRepository.Insert(insertSensor);
+            sensorRepository.Save();
+            checkSensorValues(insertSensor);
+            RefreshDBGrid();
         }
         private void checkSensorValues(Sensor insertSensor)
         {
-            using (var context = new DatabaseContext())
+            var alarms = alarmRepository.GetEntity(b => b.WorkStationId == insertSensor.WorkStationId
+                                                        && (b.MinimumTemperature > insertSensor.Temperature
+                                                        || b.MaximumTemperature < insertSensor.Temperature
+                                                        || b.MinimumPressure > insertSensor.Pressure
+                                                        || b.MaximumPressure < insertSensor.Pressure)
+                                                        ).ToList();
+            if (alarms != null)
             {
-                var result = context.Alarms.SingleOrDefault(b => b.WorkStationId == insertSensor.WorkStationId
-                                                            && (b.MinimumTemperature > insertSensor.Temperature
-                                                            || b.MaximumTemperature < insertSensor.Temperature
-                                                            || b.MinimumPressure > insertSensor.Pressure
-                                                            || b.MaximumPressure < insertSensor.Pressure)
-                                                            );
-                if (result != null)
+                var personelList = personelRepository.GetEntity(b => b.WorkStationId == insertSensor.WorkStationId).ToList();
+                if (personelList != null)
                 {
-                    var personelList = context.Personels.Where(b => b.WorkStationId == insertSensor.WorkStationId);
-                    if (personelList != null)
+                    SmtpClient client = new SmtpClient()
                     {
-                        SmtpClient client = new SmtpClient()
+                        Host = "smtp.gmail.com",
+                        Port = 587,
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential()
                         {
-                            Host = "smtp.gmail.com",
-                            Port = 587,
-                            EnableSsl = true,
-                            DeliveryMethod = SmtpDeliveryMethod.Network,
-                            UseDefaultCredentials = false,
-                            Credentials = new NetworkCredential()
-                            {
-                                UserName = "huseyinhamaddemo@gmail.com",
-                                Password = "MertCase123+"
-                            }
-                        };
-                        try
-                        {
-                            foreach (var personel in personelList)
-                            {
-                                MailAddress fromEmail = new MailAddress("huseyinhamaddemo@gmail.com", "Hüseyin Hamad");
-                                MailAddress toMail = new MailAddress(personel.PersonelMail.ToString(), personel.PersonelName.ToString());
-                                MailMessage Message = new MailMessage()
-                                {
-                                    From = fromEmail,
-                                    Subject = "Warning!!",
-                                    Body = "Sensor Values for Work Station ID: " + result.WorkStationId.ToString() + " are not optimal"
-                                };
-                                Message.To.Add(toMail);
-                                client.Send(Message);
-                            }
-                            MessageBox.Show("Warnings Sent Successfully");
+                            UserName = "huseyinhamaddemo@gmail.com",
+                            Password = "MertCase123+"
                         }
-                        catch (Exception ex)
+                    };
+                    try
+                    {
+                        foreach (var personel in personelList)
                         {
-                            MessageBox.Show(ex.ToString());
+                            MailAddress fromEmail = new MailAddress("huseyinhamaddemo@gmail.com", "Hüseyin Hamad");
+                            MailAddress toMail = new MailAddress(personel.PersonelMail.ToString(), personel.PersonelName.ToString());
+                            MailMessage Message = new MailMessage()
+                            {
+                                From = fromEmail,
+                                Subject = "Warning!!",
+                                Body = "Sensor Values for Work Station ID: " + personel.WorkStationId.ToString() + " are not optimal"
+                            };
+                            Message.To.Add(toMail);
+                            client.Send(Message);
                         }
+                        MessageBox.Show("Warnings Sent Successfully");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
                     }
                 }
             }
+        }
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.sensorRepository.Dispose();
+            this.workStationRepository.Dispose();
+            this.alarmRepository.Dispose();
+            this.personelRepository.Dispose();
         }
     }
 }

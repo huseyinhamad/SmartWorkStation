@@ -30,7 +30,7 @@ namespace MertYazilimCase.Forms.inputForms
         }
         private void FormSensor_Load(object sender, EventArgs e)
         {
-            comboBoxWorkStations.DataSource = sensorRepository.GetEntity();
+            comboBoxWorkStations.DataSource = workStationRepository.GetEntity();
             comboBoxWorkStations.ValueMember = "WorkStationId";
             comboBoxWorkStations.DisplayMember = "WorkStationName";
             comboBoxWorkStations.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -65,9 +65,12 @@ namespace MertYazilimCase.Forms.inputForms
                 };
                 sensorRepository.Insert(sensor);
                 sensorRepository.Save();
-                checkSensorValues();
 
+                checkSensorValues();
                 formMain.RefreshDBGrid();
+                
+                this.sensorRepository.Dispose();
+                this.workStationRepository.Dispose();
                 this.Close();
             }
             else if (buttonSubmit.Text == "Edit")
@@ -91,8 +94,12 @@ namespace MertYazilimCase.Forms.inputForms
 
                     sensorRepository.Update(result);
                     sensorRepository.Save();
+
                     formMain.RefreshDBGrid();
                     formMain._selectedRow = null;
+                    
+                    this.sensorRepository.Dispose();
+                    this.workStationRepository.Dispose();
                     this.Close();
                 }
             }
@@ -162,13 +169,19 @@ namespace MertYazilimCase.Forms.inputForms
 
                 formMain.RefreshDBGrid();
                 formMain._selectedRow = null;
+                
+                this.sensorRepository.Dispose();
+                this.workStationRepository.Dispose();
                 this.Close();
             }
         }
         private void FormSensor_FormClosed(object sender, FormClosedEventArgs e)
         {
             formMain._selectedRow = null;
+            this.sensorRepository.Dispose();
+            this.workStationRepository.Dispose();
         }
+  
         private void textBoxTemperature_TextChanged(object sender, EventArgs e)
         {
             TextBox tBox = (TextBox)sender;

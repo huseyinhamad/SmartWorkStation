@@ -52,16 +52,18 @@ namespace MertYazilimCase.Forms.inputForms
         {
             if (buttonSubmit.Text == "Add")
             {
-            
                 var workStation = new WorkStation()
                 {
                     ProductLineId = int.Parse(comboBoxProductLines.SelectedValue.ToString()),
                     WorkStationName = textBoxWorkStationName.Text
                 };
-
                 workStationRepository.Insert(workStation);
                 workStationRepository.Save();
+                
                 formWorkStations.RefreshDBGrid();
+                
+                this.productLineRepository.Dispose();
+                this.workStationRepository.Dispose();
                 this.Close();
             }
             else if (buttonSubmit.Text == "Edit")
@@ -82,6 +84,9 @@ namespace MertYazilimCase.Forms.inputForms
 
                     formWorkStations.RefreshDBGrid();
                     formWorkStations._selectedRow = null;
+                    
+                    this.productLineRepository.Dispose();
+                    this.workStationRepository.Dispose();
                     this.Close();
                 }
             }
@@ -97,12 +102,17 @@ namespace MertYazilimCase.Forms.inputForms
 
                 formWorkStations.RefreshDBGrid();
                 formWorkStations._selectedRow = null;
+                
+                this.productLineRepository.Dispose();
+                this.workStationRepository.Dispose();
                 this.Close();
             }
         }
         private void FormWorkStation_FormClosed(object sender, FormClosedEventArgs e)
         {
             formWorkStations._selectedRow = null;
+            this.productLineRepository.Dispose();
+            this.workStationRepository.Dispose();
         }
     }
 }

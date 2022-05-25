@@ -53,5 +53,9 @@ namespace MertYazilimCase.Forms.outputForms
                 formWorkStation.Show();
             }
         }
+        private void FormWorkStations_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.workStationRepository.Dispose();
+        }
     }
 }

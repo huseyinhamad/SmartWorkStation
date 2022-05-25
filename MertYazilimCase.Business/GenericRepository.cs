@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MertYazilimCase.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using MertYazilimCase.Data.DataLayer;
+using System.Linq.Expressions;
 
 namespace MertYazilimCase.Data.BusinessLayer
 {
@@ -19,8 +20,12 @@ namespace MertYazilimCase.Data.BusinessLayer
             this.context = context;
             _dbSet = context.Set<T>();
         }
-        public virtual IEnumerable<T>GetEntity()
+        public virtual IEnumerable<T>GetEntity(Expression<Func<T, bool>> Filter = null)
         {
+            if (Filter != null)
+            {
+                return _dbSet.Where(Filter).ToList();
+            }
             return _dbSet.ToList();
         }
 

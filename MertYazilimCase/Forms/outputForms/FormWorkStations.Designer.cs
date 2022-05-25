@@ -123,6 +123,7 @@
             this.Name = "FormWorkStations";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Work Stations";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormWorkStations_FormClosed);
             this.Load += new System.EventHandler(this.FormWorkStations_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWorkStations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workStationBindingSource)).EndInit();

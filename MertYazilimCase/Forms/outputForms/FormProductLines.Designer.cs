@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewProductLines = new System.Windows.Forms.DataGridView();
-            this.productLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.productLineNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productLineIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductLines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productLineBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,22 +53,7 @@
             this.dataGridViewProductLines.RowTemplate.Height = 29;
             this.dataGridViewProductLines.Size = new System.Drawing.Size(274, 181);
             this.dataGridViewProductLines.TabIndex = 0;
-            this.dataGridViewProductLines.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductLines_CellContentClick);
             this.dataGridViewProductLines.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductLines_CellDoubleClick);
-            // 
-            // productLineBindingSource
-            // 
-            this.productLineBindingSource.DataSource = typeof(MertYazilimCase.Data.Models.ProductLine);
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(12, 202);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(94, 29);
-            this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // productLineNameDataGridViewTextBoxColumn
             // 
@@ -85,6 +70,20 @@
             this.productLineIdDataGridViewTextBoxColumn.Name = "productLineIdDataGridViewTextBoxColumn";
             this.productLineIdDataGridViewTextBoxColumn.Visible = false;
             // 
+            // productLineBindingSource
+            // 
+            this.productLineBindingSource.DataSource = typeof(MertYazilimCase.Data.Models.ProductLine);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(12, 202);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(94, 29);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // FormProductLines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -96,6 +95,7 @@
             this.Name = "FormProductLines";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Lines";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProductLines_FormClosed);
             this.Load += new System.EventHandler(this.FormProductLines_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductLines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productLineBindingSource)).EndInit();

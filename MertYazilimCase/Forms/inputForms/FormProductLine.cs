@@ -45,9 +45,11 @@ namespace MertYazilimCase.Forms.inputForms
                 var productLine = new ProductLine() { ProductLineName = textBoxProductLineName.Text };
                 productLineRepository.Insert(productLine);
                 productLineRepository.Save();
+
                 formProductLines.RefreshDBGrid();
+
+                this.productLineRepository.Dispose();
                 this.Close();
-                productLineRepository.Dispose();
             }
             else if (buttonSubmit.Text == "Edit")
             {
@@ -64,10 +66,12 @@ namespace MertYazilimCase.Forms.inputForms
                         result.ProductLineName = textBoxProductLineName.Text;
                         productLineRepository.Update(result);
                         productLineRepository.Save();
+                        
                         formProductLines.RefreshDBGrid();
                         formProductLines._selectedRow = null;
+
+                        this.productLineRepository.Dispose();
                         this.Close();
-                        productLineRepository.Dispose();
                     }
                 }
             }
@@ -80,16 +84,19 @@ namespace MertYazilimCase.Forms.inputForms
                 DataGridViewRow row = formProductLines._selectedRow;
                 productLineRepository.Delete((int)row.Cells[0].Value);
                 productLineRepository.Save();
+                
                 formProductLines.RefreshDBGrid();
                 formProductLines._selectedRow = null;
+                
+                this.productLineRepository.Dispose();
                 this.Close();
-                productLineRepository.Dispose();
             }
         }
 
         private void FormProductLine_FormClosed(object sender, FormClosedEventArgs e)
         {
             formProductLines._selectedRow = null;
+            this.productLineRepository.Dispose();
         }
     }
 }

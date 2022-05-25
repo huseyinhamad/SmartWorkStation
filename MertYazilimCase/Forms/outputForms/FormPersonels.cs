@@ -58,5 +58,11 @@ namespace MertYazilimCase.Forms.outputForms
                 formPersonel.Show();
             }
         }
+
+        private void FormPersonels_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.personelRepository.Dispose();
+
+        }
     }
 }

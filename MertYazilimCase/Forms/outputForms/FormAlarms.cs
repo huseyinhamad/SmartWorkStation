@@ -58,5 +58,9 @@ namespace MertYazilimCase.Forms.outputForms
                 formAlarm.Show();
             }
         }
+        private void FormAlarms_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.alarmRepository.Dispose();
+        }
     }
 }

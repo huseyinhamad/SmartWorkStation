@@ -53,10 +53,10 @@ namespace MertYazilimCase
                 formProductLine.Show();
             }
         }
-
-        private void dataGridViewProductLines_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FormProductLines_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            this.productLineRepository.Dispose();
         }
     }
 }
+

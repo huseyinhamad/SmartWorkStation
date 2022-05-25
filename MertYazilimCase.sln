@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MertYazilimCase", "MertYazilimCase\MertYazilimCase.csproj", "{230DE5E1-FA9D-4FFF-87EF-BFC133B9455B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MertYazilimCase.Data", "MertYazilimCase.Data\MertYazilimCase.Data.csproj", "{4340240B-5442-4DE3-B6F2-B258F95A1406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MertYazilimCase.Data", "MertYazilimCase.Data\MertYazilimCase.Data.csproj", "{4340240B-5442-4DE3-B6F2-B258F95A1406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MertYazilimCase.Business", "MertYazilimCase.Business\MertYazilimCase.Business.csproj", "{FD622162-C77E-4A83-BFA7-8B465B819C98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MertYazilimCase.Business", "MertYazilimCase.Business\MertYazilimCase.Business.csproj", "{FD622162-C77E-4A83-BFA7-8B465B819C98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

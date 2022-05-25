@@ -67,8 +67,10 @@ namespace MertYazilimCase.Forms.inputForms
                 };
                 alarmRepository.Insert(alarm);
                 alarmRepository.Save();
-
                 formAlarms.RefreshDBGrid();
+
+                this.alarmRepository.Dispose();
+                this.workStationRepository.Dispose(); 
                 this.Close();
             }
             else if (buttonSubmit.Text == "Edit")
@@ -93,8 +95,12 @@ namespace MertYazilimCase.Forms.inputForms
 
                     alarmRepository.Update(result);
                     alarmRepository.Save();
+                    
                     formAlarms.RefreshDBGrid();
                     formAlarms._selectedRow = null;
+
+                    this.alarmRepository.Dispose();
+                    this.workStationRepository.Dispose();
                     this.Close();
                 }
             }
@@ -110,12 +116,17 @@ namespace MertYazilimCase.Forms.inputForms
           
                 formAlarms.RefreshDBGrid();
                 formAlarms._selectedRow = null;
+
+                this.alarmRepository.Dispose();
+                this.workStationRepository.Dispose();
                 this.Close();
             }
         }
         private void FormAlarm_FormClosed(object sender, FormClosedEventArgs e)
         {
             formAlarms._selectedRow = null;
+            this.alarmRepository.Dispose();
+            this.workStationRepository.Dispose();
         }
         private void textBoxMinimumTemperature_TextChanged(object sender, EventArgs e)
         {
