@@ -1,0 +1,92 @@
+2022-05-25 02:55:17.220 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-25 02:55:17.710 +03:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 02:55:17.749 +03:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 02:55:17.752 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 02:55:17.753 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 02:55:17.775 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-25 02:55:17.789 +03:00 [Information] No migrations were applied. The database is already up to date.
+2022-05-25 02:55:17.829 +03:00 [Information] FormMain "Started" at 05/24/2022 23:55:17
+2022-05-25 02:55:18.432 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/24/2022 23:55:18
+2022-05-25 03:17:20.931 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"DatabaseContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "None"
+2022-05-25 03:17:21.436 +03:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 03:17:21.465 +03:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 03:17:21.468 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-05-25 03:17:21.469 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-05-25 03:17:21.490 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-05-25 03:17:21.507 +03:00 [Information] Applying migration '"20220525001657_Inital"'.
+2022-05-25 03:17:21.571 +03:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Alarms] (
+    [AlarmId] int NOT NULL IDENTITY,
+    [WorkStationId] int NOT NULL,
+    [MinimumTemperature] float NOT NULL,
+    [MaximumTemperature] float NOT NULL,
+    [MinimumPressure] float NOT NULL,
+    [MaximumPressure] float NOT NULL,
+    CONSTRAINT [PK_Alarms] PRIMARY KEY ([AlarmId])
+);"
+2022-05-25 03:17:21.579 +03:00 [Information] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Personels] (
+    [PersonelId] int NOT NULL IDENTITY,
+    [PersonelName] nvarchar(max) NULL,
+    [PersonelMail] nvarchar(max) NULL,
+    [WorkStationId] int NOT NULL,
+    CONSTRAINT [PK_Personels] PRIMARY KEY ([PersonelId])
+);"
+2022-05-25 03:17:21.581 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [ProductLines] (
+    [ProductLineId] int NOT NULL IDENTITY,
+    [ProductLineName] nvarchar(max) NULL,
+    CONSTRAINT [PK_ProductLines] PRIMARY KEY ([ProductLineId])
+);"
+2022-05-25 03:17:21.589 +03:00 [Information] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [WorkStations] (
+    [WorkStationId] int NOT NULL IDENTITY,
+    [ProductLineId] int NOT NULL,
+    [WorkStationName] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_WorkStations] PRIMARY KEY ([WorkStationId]),
+    CONSTRAINT [FK_WorkStations_ProductLines_ProductLineId] FOREIGN KEY ([ProductLineId]) REFERENCES [ProductLines] ([ProductLineId]) ON DELETE CASCADE
+);"
+2022-05-25 03:17:21.591 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [PersonelWorkStation] (
+    [PersonelsPersonelId] int NOT NULL,
+    [WorkStationsWorkStationId] int NOT NULL,
+    CONSTRAINT [PK_PersonelWorkStation] PRIMARY KEY ([PersonelsPersonelId], [WorkStationsWorkStationId]),
+    CONSTRAINT [FK_PersonelWorkStation_Personels_PersonelsPersonelId] FOREIGN KEY ([PersonelsPersonelId]) REFERENCES [Personels] ([PersonelId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_PersonelWorkStation_WorkStations_WorkStationsWorkStationId] FOREIGN KEY ([WorkStationsWorkStationId]) REFERENCES [WorkStations] ([WorkStationId]) ON DELETE CASCADE
+);"
+2022-05-25 03:17:21.594 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Sensors] (
+    [SensorId] int NOT NULL IDENTITY,
+    [WorkStationId] int NOT NULL,
+    [Temperature] float NOT NULL,
+    [Pressure] float NOT NULL,
+    [Status] bit NOT NULL,
+    [Date] datetime2 NOT NULL,
+    CONSTRAINT [PK_Sensors] PRIMARY KEY ([SensorId]),
+    CONSTRAINT [FK_Sensors_WorkStations_WorkStationId] FOREIGN KEY ([WorkStationId]) REFERENCES [WorkStations] ([WorkStationId]) ON DELETE CASCADE
+);"
+2022-05-25 03:17:21.601 +03:00 [Information] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_PersonelWorkStation_WorkStationsWorkStationId] ON [PersonelWorkStation] ([WorkStationsWorkStationId]);"
+2022-05-25 03:17:21.602 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Sensors_WorkStationId] ON [Sensors] ([WorkStationId]);"
+2022-05-25 03:17:21.603 +03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_WorkStations_ProductLineId] ON [WorkStations] ([ProductLineId]);"
+2022-05-25 03:17:21.616 +03:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220525001657_Inital', N'6.0.5');"
+2022-05-25 03:17:21.642 +03:00 [Information] FormMain "Started" at 05/25/2022 00:17:21
+2022-05-25 03:17:21.995 +03:00 [Information] dataGridViewFormSensors "Gathered" at 05/25/2022 00:17:21
